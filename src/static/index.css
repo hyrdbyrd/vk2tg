@@ -1,0 +1,91 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #333333;
+    color: #ffffff;
+
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #cccccc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+.table {
+    display: flex;
+
+    padding: 20px 0;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    gap: 6px;
+
+    padding: 0 10px;
+
+    width: 33%;
+}
+
+.row__links {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.row {
+    background: #666666;
+    padding: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.col_400 .row {
+    background: #664444;
+    cursor: not-allowed;
+}
+
+.col_300 .row {
+    background: #666666;
+}
+
+.col_200 .row {
+    background: #446644;
+}
+
+.save {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+    padding: 5px 10px;
+
+    color: #000000;
+    background-color: #fc0;
+
+    border: none !important;
+    outline: none !important;
+
+    cursor: pointer;
+}
+
+.save:hover {
+    background-color: #da0;
+}
