@@ -1,6 +1,8 @@
-import { getGroups } from './services/vk';
-import { runServer } from './services/web';
+import { runVk } from './services/vk';
+import { runTg } from './services/tg';
+import { runWeb } from './services/web';
 
 Promise.resolve()
-    .then(() => getGroups())
-    .then(() => runServer());
+    .then(() => runVk())
+    .then(() => runWeb())
+    .then(() => runTg());

@@ -7,13 +7,13 @@ import { OUT_JSON_PATH } from '../lib/constants';
 import { uniq, map, compact } from '../lib/utils';
 import { GetGroupsResult, Group } from '../lib/types';
 
-const vk = new VK({ token: process.env.VK_TOKEN || '' });
-
 const extractTg = (str?: string) => str?.match(/https:\/\/t.me\/[^\s]+/)?.[0] ?? '';
 
 const getTgLinks = (links: string[]) => uniq(compact(map(links, extractTg)));
 
-export async function getGroups(): Promise<GetGroupsResult> {
+export async function runVk() {
+    const vk = new VK({ token: process.env.VK_TOKEN || '' });
+
     const groups: Promise<Group | null>[] = [];
 
     let setteld = 0;
@@ -57,6 +57,4 @@ export async function getGroups(): Promise<GetGroupsResult> {
     await writeFile(OUT_JSON_PATH, JSON.stringify(every, null, 4), { flag: 'w' });
 
     constantLog('VK: ✅');
-
-    return every;
 }
